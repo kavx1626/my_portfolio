@@ -1,0 +1,282 @@
+:root {
+      --bg-color: #faf6ff;
+      --text-color: #333;
+      --card-bg: white;
+      --card-shadow: rgba(102, 51, 153, 0.3);
+      --card-shadow-hover: rgba(102, 51, 153, 0.5);
+      --header-bg: #fff;
+      --header-shadow: rgba(153, 102, 255, 0.2);
+      --section-bg: #f0eaff;
+      --link-color: #000;
+    }
+
+    body.dark-mode {
+      --bg-color: #121212;
+      --text-color: #eaeaea;
+      --card-bg: #1e1e1e;
+      --card-shadow: rgba(204, 153, 255, 0.2);
+      --card-shadow-hover: rgba(204, 153, 255, 0.5);
+      --header-bg: #1a1a1a;
+      --header-shadow: rgba(204, 153, 255, 0.1);
+      --section-bg: #2a2a2a;
+      --link-color: #eaeaea;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    header {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: var(--header-bg);
+      box-shadow: 0 2px 5px var(--header-shadow);
+      padding: 1rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      animation: slideDown 1s ease forwards;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100%); }
+      to { transform: translateY(0); }
+    }
+
+    header h1 {
+      font-size: 2rem;
+      color: #6b4bb5;
+      font-weight: 700;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: 600;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      height: 2px;
+      background: #a287e9;
+      width: 0%;
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      transition: 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .theme-toggle {
+      cursor: pointer;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      color: #6b4bb5;
+    }
+
+    section {
+      width: 100%;
+      padding: 6rem 4rem 4rem;
+      scroll-margin-top: 80px;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10rem 4rem 6rem;
+      background: var(--card-bg);
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .hero-text {
+      flex: 1;
+      animation: slideInLeft 1s ease;
+    }
+
+    @keyframes slideInLeft {
+      from { transform: translateX(-50px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    .hero-text h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      color: #6b4bb5;
+      font-weight: 700;
+    }
+
+    .hero-text p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      color: var(--text-color);
+    }
+
+    .hero-text .btn {
+      padding: 0.75rem 1.5rem;
+      background-color: #7a4ee9;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+
+    .hero-text .btn:hover {
+      transform: scale(1.05);
+    }
+
+    .hero-img {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      animation: slideInRight 1s ease;
+    }
+
+    @keyframes slideInRight {
+      from { transform: translateX(50px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    .avatar-img {
+      width: 300px;
+      border-radius: 50%;
+      box-shadow: 0 10px 30px rgba(102, 51, 153, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .avatar-img:hover {
+      transform: scale(1.05);
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: var(--text-color);
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      animation: fadeIn 1s ease;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 1.2rem 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px var(--card-shadow);
+      flex: 1 1 250px;
+      max-width: 300px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      font-family: "Times New Roman", serif;
+      color: var(--text-color);
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px var(--card-shadow-hover);
+    }
+
+    #about p {
+      font-size: 1.3rem;
+      text-align: center;
+      max-width: 900px;
+      margin: auto;
+      line-height: 1.8;
+      color: var(--text-color);
+    }
+
+    .contact-section {
+      background-color: var(--section-bg);
+      padding: 4rem 4rem;
+      text-align: center;
+      animation: fadeIn 1s ease;
+    }
+
+    .contact-section .info-line {
+      font-size: 1.3rem;
+      color: var(--link-color);
+      margin: 0.5rem 0;
+    }
+
+    .contact-section form input,
+    .contact-section form textarea {
+      padding: 0.75rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      background-color: var(--card-bg);
+      color: var(--text-color);
+      transition: border-color 0.3s ease;
+    }
+
+    .contact-section form input:focus,
+    .contact-section form textarea:focus {
+      border-color: #6b4bb5;
+      outline: none;
+    }
+
+    .contact-section form button,
+    .resume-button {
+      background-color: #6b4bb5;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-section form button:hover,
+    .resume-button:hover {
+      background-color: #5936b1;
+    }
+
+    footer {
+      background: #6b4bb5;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    b {
+      color: #6b4bb5;
+    }
+
+    .hi {
+      color: #000;
+    }
